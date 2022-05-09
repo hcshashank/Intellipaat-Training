@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <style>
+      .main{
+        padding: 20px;
+        background-color: antiquewhite;
+        display:grid ;
+        place-items: center;
+
+      }
+      #btn {
+        background-color: green;
+        color: white;
+        height: 35px;
+        width: 160px;
+        font-size: 20px;
+        border-radius: 10px;
+        border: 1px solid aqua;
+        -ms-text-size-adjust: initial;
+      }
+      #value{
+        height: 25px;
+        width: 250px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <input type="text" id="value" />
+      <button id="btn" onclick="init()">Add</button>
+    </div>
+    <hr />
+    <div>
+      <ol id="myid">
+        <li id="item">Laptop</li>
+        <li id="item">Mobile</li>
+        <li id="item">Shoes</li>
+      </ol>
+    </div>
+    <script>
+      function init() {
+        var li = document.createElement("li");
+
+        var textValue = document.getElementById("value").value;
+        textValue = textValue.toUpperCase();
+        var text = document.createTextNode(textValue);
+        li.appendChild(text);
+        if (textValue === "") {
+          alert(" bhai kuch likh to le isme");
+        } else {
+          document.getElementById("myid").appendChild(li);
+        }
+      }
+    </script>
+  </body>
+</html>

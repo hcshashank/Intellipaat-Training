@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*         
+        forEach()
+        map()
+        filter()
+        reduce() 
+        */
+        var nums = [5,7,21,98,95,99,51,76,26,30,65,12,90,45,99,16,63];
+ 
+        /* 
+        for(let i = 0; i < nums.length; i++){
+            console.log(nums[i]);
+        }
+        */
+      /*  nums.forEach(function(val){
+           console.log(val)
+       }) */
+       // nums.forEach( val => console.log(val) )
+ 
+       /*
+       var doubleNums = nums.map(function(val,idx,ar){
+           return val * 2;
+        });
+      */
+      /*  var doubleNums = [];
+       nums.forEach(function(val,idx,ar){
+            doubleNums.push(val * 2);
+       });
+ 
+       console.log(doubleNums); */
+ 
+       /*  
+       var greaterThan50 = nums.filter(function(val,idx,ar){
+           return val > 50;
+       });
+       console.log(greaterThan50); 
+       */
+ 
+       var total = nums.reduce(function(initval,val,idx,ar){
+           return initval + val;
+       },0);
+ 
+       console.log(total);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

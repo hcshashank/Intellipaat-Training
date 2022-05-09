@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let promise = new Promise(function(resolve, reject){
+            setTimeout(function(){
+                let promisekept = false;
+                if(promisekept){
+                    resolve("Success Resolve message from promise");
+                }else{
+                    reject("Fail Error message from promise");
+                }
+            },4000)
+        });
+// then can take both success and error
+// catch can take error
+// finally takes no argument
+        promise.then(
+            function(res){
+                console.log(res);
+            }
+        ).catch(
+            function(err){
+                console.log(err)
+            }
+        ).finally(
+            function(){
+                console.log("the promise is complete")
+            }
+        )
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

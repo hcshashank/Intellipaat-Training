@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+    <script>
+        class Hero{
+            firstname;
+            lastname;
+            title;
+            _mission = "my secret mission";
+            static version = 101;
+            constructor(fname,lname,htitle){
+                this.firstname = fname;
+                this.lastname = lname;
+                this.title = htitle;
+            }
+            sayfullname(){
+                return this.firstname+" "+this.lastname;
+            }
+            get mission(){
+                return this._mission;
+            }
+            set mission(nmission){
+                this._mission = nmission;
+            }
+        };
+        let hero = new Hero("Scott", "Allen", "Antman");
+        console.log(hero.sayfullname());
+        console.log(hero.firstname);
+        console.log(hero.lastname);
+        console.log(hero.mission);// get
+        hero.mission = 'save the world';// set
+        console.log(hero.mission);// get
+        console.log(hero.title);
+        console.log(Hero.version);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

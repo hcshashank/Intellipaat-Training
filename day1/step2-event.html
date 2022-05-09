@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        background-color: gray;
+        width: 800px;
+        height: 400px;
+        padding: 10px;
+        overflow: auto;
+      }
+      .container div {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(42, 41, 41);
+        float: left;
+        margin: 5px;
+        color: white;
+        font-size: 40px;
+        line-height: 100px;
+        text-align: center;
+      }
+    </style>
+    <script>
+      var boxCount = 1;
+      button = document.getElementsByTagName("button");
+      function init() {
+        button[0].addEventListener("click", addBoxHandelor);
+        button[1].addEventListener("click", removeFirstBoxHandelor);
+        button[2].addEventListener("click", removeLastBoxHandelor);
+      }
+      function addBoxHandelor() {
+        var box = document.createElement("div");
+        box.setAttribute('class','box')
+        box.innerText = boxCount;
+        box.addEventListener("click", removeSelectedBox);
+        document.getElementsByClassName("container")[0].appendChild(box);
+        boxCount++;
+      }
+      function removeFirstBoxHandelor() {
+        var box = document.getElementsByClassName("container")[0].firstChild;
+        if (box) {
+          document.getElementsByClassName("container")[0].removeChild(box);
+        } else {
+          alert("nothing to remove");
+        }
+      }
+      function removeLastBoxHandelor() {
+        var box = document.getElementsByClassName("container")[0].lastChild;
+        if (box) {
+          document.getElementsByClassName("container")[0].removeChild(box);
+        } else {
+          alert("nothing to remove");
+        }
+      }
+      function removeSelectedBox(evt) {
+        var box = evt.target;
+        if(evt.target.getAttribute('class')==='box'){
+          document.getElementsByClassName("container")[0].removeChild(box);
+        }else{
+          alert('please select a box')
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", init);
+    </script>
+  </head>
+  <body>
+    <button>add box</button>
+    <button>remove first box</button>
+    <button>remove last box</button>
+    <hr />
+    <div class="container"></div>
+  </body>
+</html>

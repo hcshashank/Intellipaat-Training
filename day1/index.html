@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* h1 {
+        background-color: lightgray;
+        text-transform: uppercase;
+        color: red;
+        padding: 20px;
+        text-align: center;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      } */
+      .container {
+        background-color: gray;
+        width: 800px;
+        height: 400px;
+        padding: 10px;
+        overflow: auto;
+
+        /* background-color: rgb(255, 255, 255); */
+      }
+      .container div {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(42, 41, 41);
+        float: left;
+        margin: 5px;
+      }
+    </style>
+    <script>
+      // function init() {
+      //   document.getElementsByTagName("h1")[0].innerText =
+      //     "WELCOM TO JAN SEVA KENDRA";
+      // }
+
+      // window.onload= init;
+      // onload= init;
+      // window.addEventListener("load", init);
+      function init() {
+        document
+          .getElementsByTagName("button")[0]
+          .addEventListener("click", addBoxHandler);
+        document
+          .getElementsByTagName("button")[1]
+          .addEventListener("click", stopAddingBoxHandler);
+        document
+          .getElementsByTagName("button")[2]
+          .addEventListener("click", restartBoxHandler);
+      }
+      function addBoxHandler() {
+        const box = document.createElement("div");
+        document.getElementsByClassName("container")[0].appendChild(box);
+        console.log("box add ho rhe hai");
+      }
+      function restartBoxHandler() {
+        document
+          .getElementsByTagName("button")[0]
+          .addEventListener("click", addBoxHandler);
+          document
+          .getElementsByTagName("button")[1]
+          .addEventListener("click", stopAddingBoxHandler);
+          console.log('mene fir se usko job dedi h ab firse box add honge fikr not')
+      }
+      function stopAddingBoxHandler() {
+        document
+          .getElementsByTagName("button")[0]
+          .removeEventListener("click", addBoxHandler);
+        document
+          .getElementsByTagName("button")[1]
+          .removeEventListener("click", stopAddingBoxHandler);
+        console.log(
+          "jo function add krta tha mene usko job se nikaal diya hai"
+        );
+      }
+      addEventListener("load", init);
+    </script>
+  </head>
+  <body>
+    <!-- <h1></h1>
+    <button onclick="init()">change</button>
+    <button>remove</button> -->
+    <button>add box</button>
+    <button>stop add box</button>
+    <button>restart</button>
+    <hr />
+    <div class="container"></div>
+  </body>
+</html>
