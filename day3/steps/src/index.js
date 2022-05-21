@@ -1,6 +1,8 @@
-import {createRoot} from "react-dom/client";
-import Shashank from "./main";
-// import elm from "./main";
-// import main from "./main"
+import React from 'react'
+import Header from './Header'
 
-createRoot(document.getElementById("root")).render(<Shashank name = 'aggarwal'/>);
+export default function index() {
+  return (
+    <div><Header/> </div>
+  )
+}
